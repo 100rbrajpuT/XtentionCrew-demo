@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* external css: flickity.css */
+      .flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus { outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  background: hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  /* vertically center */
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.flickity-prev-next-button:hover { background: white; }
+
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09F;
+}
+
+.flickity-prev-next-button:active {
+  filter: alpha(opacity=60); /* IE8 */
+  opacity: 0.6;
+}
+
+.flickity-prev-next-button.previous { left: 10px; }
+.flickity-prev-next-button.next { right: 10px; }
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button:disabled {
+  filter: alpha(opacity=30); /* IE8 */
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #333;
+}
+
+/* color & size if no SVG - IE8 and Android 2.3 */
+.flickity-prev-next-button.no-svg {
+  color: #333;
+  font-size: 26px;
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots { direction: rtl; }
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  filter: alpha(opacity=25); /* IE8 */
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  filter: alpha(opacity=100); /* IE8 */
+  opacity: 1;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+.gallery-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
+.about-img-wrapper {
+  /* animation: shapeDownLeft 2s linear infinite alternate; */
+
+ animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: shapeDownLeft;
+    position: relative;
+}
+
+@keyframes shapeDownLeft{
+
+  0%{
+    top:0px;
+    left: 0px;
+  }
+  25%{
+    top:200px;
+    left: 0px;
+  }
+  75%{
+    top:200px;
+    left:0px;
+  }
+  100%{
+    top: 0px;
+    left: 0px;
+  }
+}
+
+.container{
+  background-color: aqua;
+}
+.box{
+  background-color: #09F;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  animation-name: harry1;
+  animation-duration: 2s;
+  animation-iteration-count: 1; 
+            /* it may be infinite / 1/ 3 ,4,any*/
+  animation-fill-mode:forwards; 
+       /* forward - ek bar end tk jake ruk jata hai , alternate          */
+  animation-timing-function: ease-in;     
+      /* ease-in-out -slow fast slow / ease-in > slow fast / ease-out- fast-slow*/
+      animation-delay: 2s;
+      animation-direction: alternate;
+}
+@keyframes harry1 {
+  from{
+    width: 200px;
+  }
+  to {
+    width: 1400px;
+  }
+}
+
+
+    </style>
+
+</head>
+<body>
+<!-- Flickity HTML init -->
+<div class="gallery js-flickity">
+    <div class="gallery-cell">ss  </div>
+    <div class="gallery-cell">xcxcxcs</div>
+    <div class="gallery-cell">
+      <h1>Saurabh</h1>
+    </div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+  </div>
+
+<div class="col-xl-6">
+  <div class="about-img-wrapper">
+    <img src="https://demo.techsometimes.com/sotcox/assets/img/about/about-1.png" alt="animane">
+  </div>
+</div>
+  
+
+<div class="container">
+    <div class="box">
+      <h1>This is Saurabh</h1>
+    </div>
+</div>
+
+
+<table>
+  <thead>
+      <tr>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Payment</td>
+          <td>Status</td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Star Refrigerator</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Delivered</span></td>
+      </tr>
+      <tr>
+          <td>Shoe piece</td>
+          <td>$1800</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Pending</span></td>
+      </tr>
+      <tr>
+          <td>Perfume</td>
+          <td>$1000</td>
+          <td>Paid</td>
+          <td><span class="status delivered">In progress</span></td>
+      </tr>
+      <tr>
+          <td>Shoe</td>
+          <td>$1400</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Return</span></td>
+      </tr>
+      <tr>
+          <td>Apple Watch</td>
+          <td>$1600</td>
+          <td>Due</td>
+          <td><span class="status delivered">Pending</span></td>
+      </tr>
+      <tr>
+          <td>Air Conditioners</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">In progress</span></td>
+      </tr>
+      <tr>
+          <td>Window color</td>
+          <td>$1800</td>
+          <td>Due</td>
+          <td><span class="status delivered">Delivered</span></td>
+      </tr>
+      <tr>
+          <td>Wall Fan</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Pending</span></td>
+      </tr>
+      <tr>
+          <td>Hoodie</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Pending</span></td>
+      </tr>
+      <tr>
+          <td>Shoe piece</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Pending</span></td>
+      </tr>
+      <tr>
+          <td>Speaker</td>
+          <td>$1200</td>
+          <td>Paid</td>
+          <td><span class="status delivered">Delivered</span></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<img width="100%" src="https://demo.techsometimes.com/sotcox/assets/img/hero/hero-1.png" alt="">
+
+
+
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
