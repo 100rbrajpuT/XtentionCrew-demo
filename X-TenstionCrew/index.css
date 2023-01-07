@@ -4,8 +4,9 @@
 body{
     margin-top: 0px;
     padding: 0px;
+    /* border: 1px solid red; */
 }
-
+    
 
 
 nav{
@@ -24,7 +25,12 @@ nav{
     width: 99%;
     /* border: 1px solid rgb(61, 193, 0); */
     padding-top: 0px;
+    z-index:1000;
     
+}
+#mainlogo{
+    /* margin-right: 50px; */
+    max-width: 15rem;
 }
 
 .nav{
@@ -257,8 +263,9 @@ span:nth-child(2) {
 
 .thirdlayar{
     display: flex;
-    border: 1px solid rgb(8, 173, 2);
+    /* border: 1px solid rgb(8, 173, 2); */
     background-color: #e6eefb;
+    margin-top: 2rem;
 }
 #third{
          border: 1px solid blue;
@@ -268,7 +275,7 @@ span:nth-child(2) {
 }
 .thirdd{
     /* border: 1px solid red; */
-    margin-top: 10px;
+    margin-top: 0.9rem;
     width: 40%;
 }
 .thirdd>:nth-child(1) {
@@ -454,7 +461,7 @@ span:nth-child(2) {
 
 .item{
     width: 40%;
-    /* border: 1px solid rgb(222, 12, 177); */
+    /* border: 1px solid blue  ; */
 }
 
 
@@ -533,10 +540,11 @@ span:nth-child(2) {
 .designgrid{
     display: grid;
     grid-template-columns: auto auto;
+   
     /* border: 1px solid rgb(190, 135, 6); */
 }
 .designgrid>img{
-    margin: 15px;
+    margin: 1rem;
     border-radius: 10px;
 }
 
@@ -552,8 +560,8 @@ span:nth-child(2) {
 #moreprojects>p{
     color: white;
     font-weight: 500;
-    line-height: 15px;
-    font-size: 15px;
+    line-height: 1rem;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     /* padding: 5px 50px 5px 50px; */
    
@@ -711,7 +719,7 @@ span:nth-child(2) {
 }
 
 .newsletter{
-    height: 200px;
+    height: 12.5rem;
     /* border: 1px solid red; */
     background-color: #266ff2;
     margin-top: 50px;
@@ -742,7 +750,7 @@ span:nth-child(2) {
     width: 80%;
 }
 #input{
-    height: 50px;
+    height: 3.1rem;
     background-color: white;
     width: 75%;
     margin-top: 5%;
@@ -886,6 +894,43 @@ span:nth-child(2) {
        display: none;
        
      }
+     .navmain{
+        display: flex;  
+        /* border: 1px solid red; */
+        /* width: 100%; */
+        justify-content: space-around;
+        position: fixed;
+        background-color:white;
+        max-width: 47.3rem;
+        /* border: 1px solid rgb(61, 193, 0); */
+        padding-top: 0px;
+        z-index:1000;
+        
+    }
+    .thirdlayar{
+        display: block;
+        justify-content: center;
+        /* border: 1px solid rgb(8, 173, 2); */
+        background-color: #e6eefb;
+    }
+    #third{
+        /* border: 1px solid blue; */
+        padding: 0.5px;
+        
+}
+.thirdd{
+   /* border: 1px solid red; */
+   margin-top: 0.8rem;
+   width: 98%;
+   padding: 0.2rem;
+   text-align: center;
+}
+.starflex{
+     justify-content:left;
+     align-items: flex-start;
+     padding-left: 20%;
+}
+
      .main{
         display: block;
      }
@@ -940,17 +985,102 @@ span:nth-child(2) {
        .recent{
         display: block;
         justify-content: center;
+        text-align: center;
         /* border: 1px solid black; */
     }
     .rightty{
         display: block;
         width: 70%;
         justify-content: center;
+        /* border: 1px solid red; */
+        width: 100%;
        
     }
     
     .item{
         width: 100%;
+        justify-content: center;
         /* border: 1px solid rgb(222, 12, 177); */
     }
+
+    .chooseus{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+    .denImg{
+        width: 20rem;
+    }
+    .designgrid{
+        display: grid;
+        grid-template-columns: auto auto;
+       
+        /* border: 1px solid rgb(190, 135, 6); */
+    }
+    .designgrid>img{
+        /* margin: 15px; */
+        border-radius: 10px;
+        width: 20rem;
+    }
+    .newsletter{
+      
+        margin-top: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 4rem;
+        padding: 2rem;
+    }
+    .newsletter>div{
+        /* border: 2px solid rgb(20, 9, 9); */
+        margin: 1% 5% 1% 5%;
+        
+    }
+    .newsletter>div>p{
+        /* border: 1px solid red; */
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 50px;
+    }
+    .newsletter>div>p + p{
+        /* border: 1px solid rgb(24, 27, 175); */
+        color: white;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        /* padding-left: 50px; */
+    }
+    .neww{
+        width: 80%;
+    }
+    #input{
+        padding:1%;
+    }
+    #input>input{
+        text-decoration: none;
+        /* border: 0px solid; */
+        padding: 10px 0px 0px 50px;
+    }
+    #input>button{
+        width: 150px;
+        background-color: #266ff2;
+        color: white;
+        height: 40px;
+        padding: 5px;
+        font-size: 15px;
+        border-radius: 7px;
+        margin-top: 1%;
+        margin-left: 30%;
+    }
+    #moreprojects{
+        background-color: #266ff2;
+        padding: 1% 10% 1% 10%;
+        border-radius: 10px;
+       margin: 1%;
+       padding-bottom: 0.5rem;        
+    }
+    
    }
